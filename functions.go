@@ -46,3 +46,13 @@ func Schedule(tree *Tree, fn func(context.Context) (time.Duration, error)) error
 	})
 	return nil
 }
+
+// Call runs fn in a separate goroutine and returns a context that will cancel
+// when the function completes.
+func Call(ctx context.Context, fn func() error) context.Context {
+	ctx, cancel := context.WithCancelCause(ctx)
+	go func() {
+		cancel(fn())
+	}()
+	return ctx
+}

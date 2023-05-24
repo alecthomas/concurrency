@@ -10,7 +10,7 @@ type Channel[T any] struct {
 	dest chan<- T
 }
 
-// ToChannel creates a new Channel[T] instance.
+// ToChannel creates a new [Channel] instance.
 func ToChannel[T any](ctx context.Context, dest chan<- T, options ...Option) (*Channel[T], context.Context) {
 	tree, ctx := New(ctx, options...)
 	return &Channel[T]{tree: tree, dest: dest}, ctx
