@@ -3,7 +3,7 @@ module github.com/alecthomas/concurrency
 go 1.20
 
 require (
-	github.com/alecthomas/assert/v2 v2.2.2
+	github.com/alecthomas/assert/v2 v2.3.0
 	golang.org/x/sync v0.2.0
 )
 
