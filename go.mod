@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/alecthomas/assert/v2 v2.4.0
-	golang.org/x/sync v0.4.0
+	golang.org/x/sync v0.5.0
 )
 
 require (
